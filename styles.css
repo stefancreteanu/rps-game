@@ -1,0 +1,11 @@
+html {
+    background-color: rgb(46, 46, 46);
+}
+
+.weapons {
+    display: flex;
+}
+
+.weapons div {
+    padding: 10px;
+}
