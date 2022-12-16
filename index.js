@@ -57,3 +57,8 @@ scissors.onclick = () => {
     console.log(playerWeapon);
     console.log(weapons[computerWeapon]);
 }
+
+const resetScore = () => {
+    document.getElementById('computerScore').innerHTML = 0;
+    document.getElementById('playerScore').innerHTML = 0;
+}
