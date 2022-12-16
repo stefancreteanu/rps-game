@@ -1,11 +1,33 @@
 html {
     background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .weapons {
     display: flex;
 }
 
-.weapons div {
+.score {
+    display: flex;
+}
+
+.score div {
     padding: 10px;
+}
+
+.weapons div {
+    padding: 10px; 
+}
+
+.weapons div:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
