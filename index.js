@@ -10,58 +10,56 @@ let playerWeapon = '';
 let playerScore = 0;
 let computerScore = 0;
 
+const computerChoice = () => {
+    computerWeapon = Math.floor(Math.random() * weapons.length);
+}
+
 rock.onclick = () => {
     playerWeapon = 'rock';
-    computerWeapon = Math.floor(Math.random() * weapons.length);
+    computerChoice();
     if(playerWeapon == weapons[computerWeapon]) {
         document.getElementById('message').innerHTML = 'Tie!';
-    } else if (playerWeapon == 'rock' && weapons[computerWeapon] == 'paper') {
-        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, computer wins the match`;
+    } else if (weapons[computerWeapon] == 'paper') {
+        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, computer wins the match!`;
         document.getElementById('computerScore').innerHTML = computerScore += 1;
         localStorage.setItem('computerScore', computerScore);
-    } else if (playerWeapon == 'rock' && weapons[computerWeapon] == 'scissors') {
-        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, player wins the match`;
+    } else if (weapons[computerWeapon] == 'scissors') {
+        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, player wins the match!`;
         document.getElementById('playerScore').innerHTML = playerScore += 1;
         localStorage.setItem('playerScore', playerScore);
     }
-    console.log(playerWeapon);
-    console.log(weapons[computerWeapon]);
 }
 
 paper.onclick = () => {
     playerWeapon = 'paper';
-    computerWeapon = Math.floor(Math.random() * weapons.length);
+    computerChoice();
     if(playerWeapon == weapons[computerWeapon]) {
         document.getElementById('message').innerHTML = 'Tie!';
-    } else if (playerWeapon == 'paper' && weapons[computerWeapon] == 'scissors') {
-        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, computer wins the match`;
+    } else if (weapons[computerWeapon] == 'scissors') {
+        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, computer wins the match!`;
         document.getElementById('computerScore').innerHTML = computerScore += 1;
         localStorage.setItem('computerScore', computerScore);
-    } else if (playerWeapon == 'paper' && weapons[computerWeapon] == 'rock') {
-        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, player wins the match`;
+    } else if (weapons[computerWeapon] == 'rock') {
+        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, player wins the match!`;
         document.getElementById('playerScore').innerHTML = playerScore += 1;
         localStorage.setItem('playerScore', playerScore);
     }
-    console.log(playerWeapon);
-    console.log(weapons[computerWeapon]);
 }
 
 scissors.onclick = () => {
     playerWeapon = 'scissors';
-    computerWeapon = Math.floor(Math.random() * weapons.length);
+    computerChoice();
     if(playerWeapon == weapons[computerWeapon]) {
         document.getElementById('message').innerHTML = 'Tie!';
-    } else if (playerWeapon == 'scissors' && weapons[computerWeapon] == 'rock') {
-        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, computer wins the match`;
+    } else if (weapons[computerWeapon] == 'rock') {
+        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, computer wins the match!`;
         document.getElementById('computerScore').innerHTML = computerScore += 1;
         localStorage.setItem('computerScore', computerScore);
-    } else if (playerWeapon == 'scissors' && weapons[computerWeapon] == 'paper') {
-        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, player wins the match`;
+    } else if (weapons[computerWeapon] == 'paper') {
+        document.getElementById('message').innerHTML = `Computer has chosen ${weapons[computerWeapon]}, player wins the match!`;
         document.getElementById('playerScore').innerHTML = playerScore += 1;
         localStorage.setItem('playerScore', playerScore);
     }
-    console.log(playerWeapon);
-    console.log(weapons[computerWeapon]);
 }
 
 window.onload = () => {
